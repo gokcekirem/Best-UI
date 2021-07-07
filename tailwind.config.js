@@ -19,6 +19,7 @@ module.exports = {
        'ActiveAreaRadioButtonActive': '#CDD8CB',
        'ActiveAreaFillInBox': '#BBC2BA',
        'MainTextActive': '#EBEBEB',
+       'MainTextInactive': '#B3B3B3',
        'ActiveAreaBackground': '#EAF2E9'
       },
       fontFamily: {
