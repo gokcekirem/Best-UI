@@ -71,3 +71,7 @@ More information about the usage of this directory in [the documentation](https:
 ### `assets`
 
 This directory contains global css definitions, *svg* images and fonts.
+
+### `layouts`
+
+Contains the main layout for the webpage.
