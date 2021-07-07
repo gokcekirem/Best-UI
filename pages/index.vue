@@ -1,5 +1,5 @@
 <template>
-  <Tutorial />
+  <CreateListingCard />
 </template>
 
 <script lang="ts">
