@@ -1,20 +1,37 @@
 <template>
 
-<div class="bar">
-  <div class="top">
-    <h2>Welcome to Marketplace!</h2>
-    <div class="clock">
+<div class="bar bg-MainColorInactive text-bestFontMedium fontMedium fontColorActive">
+  <div class="top bg-MainColorActive block">
+    <div class="welcome">
+        <h2>Welcome to Marketplace!</h2>
+    </div>
+    <div class="clock fontColorInactive block">
       <h6>Current Market Clock</h6>
     </div>
-    <div class="time">
+    <div class="time fontColorInactive block">
       <h6>Current Market Time</h6>
     </div>
   </div>
-  <div class="middle bg-MainColorInactive text-bestFontSmall">
+  <div class="middle bg-MainColorInactive block">
     <div class="buttons">
-    <br><button class="create" type="submit">Create New Listing</button>
-    <br><button class="history" type="submit">Listing History</button>
-  </div>
+        <div>
+            <div style="width: 20%; float:left">
+                <img class="image" src="../assets/images/plus-circle.svg">
+            </div>
+            <div style="width: 80%; float:right; text-align:left">
+                <button class="create active:bg-MainColorActive inactive:bg-MainColorInactive" type="button">Create New Listing</button>
+            </div>
+        </div>
+        <div>
+            <div style="width: 20%; float:left">
+                <img class="image" src="../assets/images/archive.svg">
+            </div>
+            <div style="width: 80%; float:right; text-align:left">
+                <button class="history active:bg-MainColorActive inactive:bg-MainColorInactive" type="button">Listing History</button>
+            </div>
+        </div>
+
+    </div>
   </div>
 </div>
 
@@ -23,55 +40,54 @@
 <style scoped>
 .bar {
   padding: 10px;
-  background: #7FFFD4;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   width: 20%;
 }
 
 .top {
-  background-color: #4CAF50;
   height: 33%;
   text-align: center;
 }
 
+.welcome {
+  height: 60%;
+  text-align: center;
+}
+
 .clock {
-  background-color: #9400D3;
   width: 100%;
+  text-align: left;
 }
 .time {
-  background-color: #FF1493;
   width: 100%;
-  height: -10%;
+  height: 25%;
+  text-align: left;
 }
 
 .middle {
   height: 66%;
 }
 
+.image {
+  padding: 10%;
+  width: 90%;
+}
+
 .create {
-  background-color: #4CAF50;
-  font-size: 10px;
-  padding: 16px;
-  width: 100%;
+  padding: 10%;
+  width: 90%;
 }
 
 .history {
-  background-color: #FFD700;
-  font-size: 10px;
-  padding: 16px;
-  width: 100%;
+  padding: 10%;
+  width: 90%;
 }
 
 .buttons{
   height: 33%;
 }
 
-.main{
-  height: 100%;
-  width: 100%;
-  background-color: #FFD700;
-}
 </style>
 
 <script lang="ts">
