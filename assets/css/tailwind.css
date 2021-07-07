@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+    FONT IMPORTS
+*/
+@font-face {
+  font-family: 'Objective-Black';
+  src: local('Objective-Black'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Black.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Black';
+  src: local('Objective-Black'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Black-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Bold';
+  src: local('Objective-Bold'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Bold.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Bold';
+  src: local('Objective-Bold'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Bold-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-ExtraBold';
+  src: local('Objective-ExtraBold'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-ExtraBold.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-ExtraBold';
+  src: local('Objective-ExtraBold'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-ExtraBold-Italic.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-ExtraBold';
+  src: local('Objective-ExtraBold'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-ExtraBold-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Light';
+  src: local('Objective-Light'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Light.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Light';
+  src: local('Objective-Light'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Light-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Medium';
+  src: local('Objective-Medium'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Medium.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Medium';
+  src: local('Objective-Medium'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Medium-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Super';
+  src: local('Objective-Super'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Super.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Super';
+  src: local('Objective-Super'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Super-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Thin';
+  src: local('Objective-Thin'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Thin.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Thin';
+  src: local('Objective-Thin'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Thin-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Objective-Normal';
+  src: local('Objective-Normal'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Regular.woff2) format('woff2');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Objective-Normal';
+  src: local('Objective-Normal'),
+    url(./assets/fonts/obective/Objective_Woff2/Objective-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+/*
+    FONT DEFINITIONS
+*/
+.fontBlack {
+  font-family: Objective-Black !important;
+}
+
+.fontBlackItalic {
+  font-family: Objective-Black !important;
+  font-style: italic;
+}
+
+.fontBold {
+  font-family: Objective-Bold !important;
+}
+
+.fontBoldItalic {
+  font-family: Objective-Bold !important;
+  font-style: italic;
+}
+
+.fontExtraBold {
+  font-family: Objective-ExtraBold !important;
+}
+
+.fontExtraBoldItalic {
+  font-family: Objective-ExtraBold !important;
+  font-style: italic;
+}
+
+.fontNormal {
+  font-family: Objective-Normal !important;
+}
+
+.fontNormalItalic {
+  font-family: Objective-Normal !important;
+  font-style: italic;
+}
+
+.fontMedium {
+  font-family: Objective-Medium !important;
+}
+
+.fontMediumItalic {
+  font-family: Objective-Medium !important;
+  font-style: italic;
+}
+
+.fontLight {
+  font-family: Objective-Light !important;
+}
+
+.fontLightItalic {
+  font-family: Objective-Light !important;
+  font-style: italic;
+}
+
+.fontSuper {
+  font-family: Objective-Super !important;
+}
+
+.fontSuperItalic {
+  font-family: Objective-Super !important;
+  font-style: italic;
+}
+
+.fontThin {
+  font-family: Objective-Thin !important;
+}
+
+.fontThinItalic {
+  font-family: Objective-Thin !important;
+  font-style: italic;
+}
