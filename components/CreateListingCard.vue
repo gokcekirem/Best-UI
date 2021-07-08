@@ -1,8 +1,8 @@
 <template>
 
-<div class="listing">
+<div class="listing bg-gray-200">
   <div class="left">
-    <h2>Listing Creation</h2>
+    <div class="title title text-3xl block"><h2>Listing Creation</h2></div>
     <div class="section">
       <label class="title" for="fname">Amount</label>
       <div class="comment">
@@ -44,7 +44,13 @@
     </div>
     
   </div>
+
+  
+
   <div class="right">
+    <div class="middle block">
+      <h2>To</h2>
+    </div>
     <div class="buttons">
     <br><label class="radio">Sell
   <input type="checkbox">
@@ -63,72 +69,77 @@
 <style scoped>
 
 .listing {
-  background: #7FFFD4;
   width: 50%;
   margin: auto;
   height: 80%;
   text-align: left;
-  padding-top: 10%;
-  padding-bottom: 10%;
-    
+  padding: 1%;
+  border-radius: 8%;
 }
 
 .left {
-  background-color: #4CAF50;
   height: 100%;
   text-align: left;
-  width: 90%;
+  width: 85%;
   float: left;
+  padding-left: 3%;
 }
 
 .section {
   background-color: #9400D3;
-  width: 80%;
-  height: 15%;
+  width: 90%;
   text-align: left;
-  padding-left: 3%;
-  padding: 3%;
+  padding-bottom: 1%;
+  
 }
 
 .input{
   width: 95%;
+  height: 40px;
   background-color: #ADFF2F;
+  border-radius: 2%;
 }
 
 .selection {
   background-color: #9400D3;
   width: 100%;
+  padding:1%;
+}
+
+.middle {
+  background-color: #9400D3;
+  
+  float: left;
 }
 
 .right {
-  background-color:#F5F5DC;
   height: 100%;
-  width: 10%;
+  width: 15%;
   float: right;
-  text-align: right;
-  padding-top: 40%;
-  padding-bottom: 30%;
-  
+  text-align: center;
+  padding-top: 30%;
 }
 .radio {
   background-color:#F5F5DC;
-  width: 40%;
+  
 }
 .radio1 {
   background-color:#F5F5DC;
   width: 40%;
   float: right;
+  padding-top: 2%;
+  text-align: center;
+  border-radius: 4%;
 }
 .radio2 {
   background-color:#F5F5DC;
   width: 40%;
   float: left;
+  padding-top: 2%;
+  text-align: center;
+  border-radius: 4%;
 }
 
-
-.buttons{
-  padding-top: 50%;
-}
 
 .main{
   height: 100%;
