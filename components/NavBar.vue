@@ -1,40 +1,67 @@
 <template>
-
-<div class="bar bg-MainColorInactive text-bestFontMedium fontMedium fontColorActive">
-  <div class="top bg-MainColorActive block">
-    <div class="welcome">
+  <div
+    class="
+      bar
+      bg-MainColorInactive
+      text-bestFontMedium
+      fontMedium
+      fontColorActive
+    "
+  >
+    <div class="top bg-MainColorActive block">
+      <div class="welcome">
         <h2>Welcome to Marketplace!</h2>
+      </div>
+      <div class="clock fontColorInactive block">
+        <h6>Current Market Clock</h6>
+      </div>
+      <div class="time fontColorInactive block">
+        <h6>Current Market Time</h6>
+      </div>
     </div>
-    <div class="clock fontColorInactive block">
-      <h6>Current Market Clock</h6>
-    </div>
-    <div class="time fontColorInactive block">
-      <h6>Current Market Time</h6>
+    <div class="middle bg-MainColorInactive block">
+      <div class="buttons">
+        <nuxt-link to="/create">
+          <div class="new-listings-page-button">
+            <div style="width: 20%; float: left">
+              <img class="image" src="../assets/images/plus-circle.svg" />
+            </div>
+            <div style="width: 80%; float: right; text-align: left">
+              <button
+                class="
+                  create
+                  active:bg-MainColorActive
+                  inactive:bg-MainColorInactive
+                "
+                type="button"
+              >
+                Create New Listing
+              </button>
+            </div>
+          </div>
+        </nuxt-link>
+        <nuxt-link to="/listings">
+          <div class="listing-history-button">
+            <div style="width: 20%; float: left">
+              <img class="image" src="../assets/images/archive.svg" />
+            </div>
+            <div style="width: 80%; float: right; text-align: left">
+              <button
+                class="
+                  history
+                  active:bg-MainColorActive
+                  inactive:bg-MainColorInactive
+                "
+                type="button"
+              >
+                Listing History
+              </button>
+            </div>
+          </div>
+        </nuxt-link>
+      </div>
     </div>
   </div>
-  <div class="middle bg-MainColorInactive block">
-    <div class="buttons">
-        <div>
-            <div style="width: 20%; float:left">
-                <img class="image" src="../assets/images/plus-circle.svg">
-            </div>
-            <div style="width: 80%; float:right; text-align:left">
-                <button class="create active:bg-MainColorActive inactive:bg-MainColorInactive" type="button">Create New Listing</button>
-            </div>
-        </div>
-        <div>
-            <div style="width: 20%; float:left">
-                <img class="image" src="../assets/images/archive.svg">
-            </div>
-            <div style="width: 80%; float:right; text-align:left">
-                <button class="history active:bg-MainColorActive inactive:bg-MainColorInactive" type="button">Listing History</button>
-            </div>
-        </div>
-
-    </div>
-  </div>
-</div>
-
 </template>
 
 <style scoped>
@@ -84,10 +111,9 @@
   width: 90%;
 }
 
-.buttons{
+.buttons {
   height: 33%;
 }
-
 </style>
 
 <script lang="ts">
