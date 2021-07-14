@@ -2,37 +2,45 @@
 
 <div class="section">
   <div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h5>Role</h5>
-    <p>BUYER</p>
+  <div class="column-first bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Role</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>BUYER</p></div>
   </div>
-  <div class="column" style="background-color:#bbb;">
-    <h5>Energy Type</h5>
-    <p>Renewable</p>
+  <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Energy Type</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>Renewable</p></div>
   </div>
-    <div class="column">
-    <h5>Amount</h5>
-    <p>100000</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Amount</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>100000</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Desired Unit Price</h5>
-    <p>0.36$</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Desired Unit Price</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>0.36$</p></div>
   </div>
-    <div class="column" style="background-color:#aaa;">
-    <h5>Market Unit Price</h5>
-    <p>0.48$</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Market Unit Price</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>0.48$</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Market Clock</h5>
-    <p>1</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Market Clock</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>1</p></div>
   </div>
-    <div class="column">
-    <h5>Mather ID</h5>
-    <p>GoV-BV</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Mather ID</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>GoV-BV</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Matched ID</h5>
-    <p>SunCo</p>
+    <div class="column-last bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Matched ID</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>SunCo</p></div>
   </div>
 </div>
 </div>
@@ -43,10 +51,29 @@
 
 .column {
   float: left;
-  width: 10%;
+  width: 11.25%;
   padding: 10px; 
   height: 25%;
 }
+
+.column-first {
+  float: left;
+  width: 11.25%;
+  padding: 10px; 
+  height: 25%;
+  border-top-left-radius: 8%;
+  border-bottom-left-radius: 8%;
+}
+
+.column-last {
+  float: left;
+  width: 11.25%;
+  padding: 10px; 
+  height: 25%;
+  border-top-right-radius: 8%;
+  border-bottom-right-radius: 8%;
+}
+
 
 .row:after {
   content: "";
@@ -58,10 +85,17 @@
 }
 
 .section{
-  background-color: #4CAF50;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.col-name{
+  text-align: center;
+}
+
+.col-input{
+  text-align: center;
 }
 
 </style>
