@@ -2,29 +2,35 @@
 
 <div class="section">
   <div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h4>Listing Type</h4>
-    <p>BUY</p>
+  <div class="column-first bg-gray-300 border-color: coral">
+    <div class="col-name title text-xl block"><h4>Listing Type</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>BUY</p></div>
   </div>
-  <div class="column" style="background-color:#bbb;">
-    <h4>Energy Type</h4>
-    <p>Renewable</p>
+  <div class="column bg-gray-300">
+    <div class="col-name title text-xl block"><h4>Energy Type</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>Renewable</p></div>
   </div>
-    <div class="column">
-    <h4>Amount</h4>
-    <p>100000</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-xl block"><h4>Amount</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>100000</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h4>Unit Price</h4>
-    <p>0.36$</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-xl block"><h4>Unit Price</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>0.36$</p></div>
   </div>
-    <div class="column" style="background-color:#aaa;">
-    <h4>Mather ID</h4>
-    <p>GoV-BV</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-xl block"><h4>Mather ID</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>GoV-BV</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h4>Market Clock</h4>
-    <p>12</p>
+    <div class="column-last bg-gray-300">
+    <div class="col-name title text-xl block"><h4>Market Clock</h4></div>
+    <br>
+    <div class="col-input text-gray-600"><p>12</p></div>
   </div>
 </div>
 </div>
@@ -35,10 +41,45 @@
 
 .column {
   float: left;
-  width: 10%;
+  width: 15%;
   padding: 10px; 
   height: 20%;
+  border-top-color: coral;
+  border-bottom-color: coral;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
 }
+
+.column-first {
+  float: left;
+  width: 15%;
+  padding: 10px; 
+  height: 20%;
+  border-top-left-radius: 8%;
+  border-bottom-left-radius: 8%;
+  border-top-color: coral;
+  border-left-color: coral;
+  border-bottom-color: coral;
+  border-top-width: 3px;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+}
+
+.column-last {
+  float: left;
+  width: 15%;
+  padding: 10px; 
+  height: 20%;
+  border-top-right-radius: 8%;
+  border-bottom-right-radius: 8%;
+  border-top-color: coral;
+  border-right-color: coral;
+  border-bottom-color: coral;
+  border-top-width: 3px;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+}
+
 
 .row:after {
   content: "";
@@ -50,10 +91,20 @@
 }
 
 .section{
-  background-color: #4CAF50;
-  width: 80%;
+  width: 100%;
+  height: 20%;
   margin-left: auto;
   margin-right: auto;
+  /*border-color: coral;
+  border-width: 2px;*/
+
+}
+.col-name{
+  text-align: center;
+}
+
+.col-input{
+  text-align: center;
 }
 
 </style>
