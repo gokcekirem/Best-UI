@@ -198,3 +198,11 @@
   font-family: Objective-Thin !important;
   font-style: italic;
 }
+
+.fontColorActive{
+  color: theme('colors.MainTextActive');
+}
+
+.fontColorInactive{
+  color: theme('colors.MainTextInactive') !important;
+}
