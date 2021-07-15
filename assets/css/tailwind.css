@@ -199,10 +199,18 @@
   font-style: italic;
 }
 
-.fontColorActive{
+.fontColorActive {
   color: theme('colors.MainTextActive');
 }
 
-.fontColorInactive{
+.fontColorInactive {
   color: theme('colors.MainTextInactive') !important;
+}
+
+.iconActiveColor {
+  stroke: theme('colors.MainTextActive');
+}
+
+.iconInactiveColor {
+  stroke: theme('colors.MainTextInactive');
 }

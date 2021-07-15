@@ -1,76 +1,108 @@
 <template>
+  <div class="listing bg-ActiveAreaCard">
+    <div class="left">
+      <div class="title title text-3xl block"><h2>Listing Creation</h2></div>
 
-<div class="listing bg-gray-200">
-  <div class="left">
-    <div class="title title text-3xl block"><h2>Listing Creation</h2></div>
-    
-    <div class = "section bg-gray-200">
-    <div class="section">
-      <label class="title" for="fname">Amount</label>
-      <div class="comment" >
-        <h6>"Denotes the amount of electricity you would like to buy/sell in MVU*. (Minimum Viable Unit)"</h6>
+      <div class="section">
+        <div class="section">
+          <label class="title" for="fname">Amount</label>
+          <div class="comment">
+            <h6>
+              "Denotes the amount of electricity you would like to buy/sell in
+              MVU*. (Minimum Viable Unit)"
+            </h6>
+          </div>
+          <input
+            type="text"
+            id="fname"
+            class="input"
+            name="firstname"
+            placeholder="Please enter a number"
+          />
+        </div>
+
+        <div class="section">
+          <label class="title" for="fname">Unit Price</label>
+          <div class="comment">
+            <h6>
+              "Denotes the MVU* price of the electricity you would like to
+              buy/sell from. (Minimum Viable Unit)"
+            </h6>
+          </div>
+          <input
+            type="text"
+            id="fname"
+            class="input"
+            name="firstname"
+            placeholder="Please enter a number"
+          />
+        </div>
+
+        <div class="section">
+          <label class="title" for="fname">Matcher Node ID</label>
+          <div class="comment">
+            <h6>
+              "Every matching node corresponds to a micro marketplace, please
+              specift in which marketplace you would like to participate in"
+            </h6>
+          </div>
+          <input
+            type="text"
+            id="fname"
+            class="input"
+            name="firstname"
+            placeholder="Please enter a string"
+          />
+        </div>
+
+        <div class="section">
+          <label class="title" for="fname">Energy Type</label>
+          <div class="comment">
+            <h6>
+              "Type of the energy you would like to buy/sell. In many
+              marketplaces, the final unit prices will differ based on the enery
+              type."
+            </h6>
+          </div>
+          <div>
+            <label class="radio1" width="50%" align="left"
+              >Non-Renewable
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div>
+            <label class="radio2" width="50%" float="right"
+              >Renewable
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+        </div>
       </div>
-      <input type="text" id="fname" class="input bg-gray-300" name="firstname" placeholder="Please enter a number" >
-        
+    </div>
+
+    <div class="right">
+      <div class="middle block">
+        <h2>To</h2>
       </div>
-    
-    <div class="section">
-      <label class="title" for="fname">Unit Price</label>
-      <div class="comment">
-      <h6>"Denotes the MVU* price of the electricity you would like to buy/sell from. (Minimum Viable Unit)"</h6>
+      <div class="buttons">
+        <br /><label class="container"
+          >Sell
+          <input type="checkbox" checked="checked" />
+          <span class="checkmark"></span>
+        </label>
+        <br /><label class="container"
+          >Buy
+          <input type="checkbox" checked="checked" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
     </div>
-     <input type="text" id="fname" class="input bg-gray-300" name="firstname" placeholder="Please enter a number">  
-    </div>
-    
-    <div class="section">
-      <label class="title" for="fname">Matcher Node ID</label>
-      <div class="comment">
-      <h6>"Every matching node corresponds to a micro marketplace, please specift in which marketplace you would like to participate in"</h6>
-    </div>
-     <input type="text" id="fname" class="input bg-gray-300" name="firstname" placeholder="Please enter a string">  
-    </div>
-    
-    <div class="section">
-      <label class="title" for="fname">Energy Type</label>
-      <div class="comment">
-      <h6>"Type of the energy you would like to buy/sell. In many marketplaces, the final unit prices will differ based on the enery type."</h6>
-    </div>
-      <div><label class="radio1 bg-gray-500" width="50%" align="left">Non-Renewable
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label></div>
-      <div><label class="radio2 bg-gray-300" width="50%" float="right">Renewable
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label></div>
-    </div>
-    </div>
-    
   </div>
-
-  
-
-  <div class="right">
-    <div class="middle block">
-      <h2>To</h2>
-    </div>
-    <div class="buttons">
-    <br><label class="container bg-gray-500">Sell
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-    <br><label class="container">Buy
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-  </div>
-  </div>
-</div>
-
 </template>
 
 <style scoped>
-
 .listing {
   width: 50%;
   margin: auto;
@@ -93,22 +125,22 @@
   text-align: left;
   padding-bottom: 1%;
   border-radius: 0.5%;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
-.input{
+.input {
   width: 95%;
   height: 40px;
   border-radius: 0.5%;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
 .selection {
-  background-color: #9400D3;
+  background-color: #9400d3;
   width: 100%;
-  padding:1%;
+  padding: 1%;
 }
 
 .middle {
@@ -123,8 +155,7 @@
   padding-top: 30%;
 }
 .radio {
-  background-color:#F5F5DC;
-  
+  background-color: #f5f5dc;
 }
 .container {
   display: block;
@@ -165,7 +196,7 @@
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -198,8 +229,8 @@
   padding-top: 2%;
   text-align: center;
   border-radius: 0.5%;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 .radio2 {
   width: 40%;
@@ -207,17 +238,15 @@
   padding-top: 2%;
   text-align: center;
   border-radius: 0.5%;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
-
-.main{
+.main {
   height: 100%;
   width: 100%;
-  background-color: #FFD700;
+  background-color: #ffd700;
 }
-
 </style>
 
 <script lang="ts">

@@ -15,7 +15,7 @@ module.exports = {
       colors: {
        'MainColorInactive': '#062300',
        'MainColorActive': '#105700',
-       'ActiveAreaCard': '#CDD8CB',
+       'ActiveAreaCard': 'rgba(205,216,203,0.50)',
        'ActiveAreaRadioButtonActive': '#CDD8CB',
        'ActiveAreaFillInBox': '#BBC2BA',
        'MainTextActive': '#EBEBEB',
