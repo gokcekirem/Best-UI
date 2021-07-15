@@ -12,7 +12,12 @@
             <br>
     
             <div class="activeListing">
-                <ActiveListingCard />
+                <ActiveListingCard
+                class="card"
+                v-for="(listing) in states"
+                v-bind:key="listing.data.listingType"
+                v-bind:listing="listing"
+                />
             </div>
         </div>
 
@@ -49,10 +54,17 @@
     
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 
-export default Vue.extend({});
+//export default Vue.extend({});
+
+export default {
+    async asyncData({ $http }) {
+      const states = await $http.$get(`http://localhost/50005/listings`)
+      return { states }
+    }
+  }
 
 </script>
 
