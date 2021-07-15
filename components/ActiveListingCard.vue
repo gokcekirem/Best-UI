@@ -5,32 +5,32 @@
   <div class="column-first bg-gray-300 border-color: coral">
     <div class="col-name title text-xl block"><h4>Listing Type</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>BUY</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.listingType}}</p></div>
   </div>
   <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Energy Type</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>Renewable</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.electricityType}}</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Amount</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>100000</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.amount}}</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Unit Price</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>0.36$</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Mather ID</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>GoV-BV</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.matcher}}</p></div>
   </div>
     <div class="column-last bg-gray-300">
     <div class="col-name title text-xl block"><h4>Market Clock</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>12</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.marketClock}}</p></div>
   </div>
 </div>
 </div>
@@ -109,6 +109,8 @@
 
 </style>
 
-<script lang="ts">
-// use TypeScript here
+<script>
+export default {
+    props: { listing: Object }
+  }
 </script>
