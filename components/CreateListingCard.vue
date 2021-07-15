@@ -1,11 +1,22 @@
 <template>
-  <div class="listing bg-ActiveAreaCard">
+  <div
+    :class="{
+      'createListingCard bg-ActiveAreaCard fontMedium failIndicator':
+        currentStatus == 1,
+      'createListingCard bg-ActiveAreaCard fontMedium successIndicator':
+        currentStatus == 0,
+      'createListingCard bg-ActiveAreaCard fontMedium defaultIndicator':
+        currentStatus != 0 && currentStatus != 1,
+    }"
+  >
     <div class="left">
-      <div class="title title text-3xl block"><h2>Listing Creation</h2></div>
+      <div class="cardNameText text-3xl">
+        <h2>Listing Creation</h2>
+      </div>
 
-      <div class="section">
+      <div class="left-section">
         <div class="section">
-          <label class="title" for="fname">Amount</label>
+          <label class="section-header-text" for="fname">Amount</label>
           <div class="comment">
             <h6>
               "Denotes the amount of electricity you would like to buy/sell in
@@ -22,7 +33,7 @@
         </div>
 
         <div class="section">
-          <label class="title" for="fname">Unit Price</label>
+          <label class="section-header-text" for="fname">Unit Price</label>
           <div class="comment">
             <h6>
               "Denotes the MVU* price of the electricity you would like to
@@ -39,7 +50,7 @@
         </div>
 
         <div class="section">
-          <label class="title" for="fname">Matcher Node ID</label>
+          <label class="section-header-text" for="fname">Matcher Node ID</label>
           <div class="comment">
             <h6>
               "Every matching node corresponds to a micro marketplace, please
@@ -56,7 +67,7 @@
         </div>
 
         <div class="section">
-          <label class="title" for="fname">Energy Type</label>
+          <label class="section-header-text" for="fname">Energy Type</label>
           <div class="comment">
             <h6>
               "Type of the energy you would like to buy/sell. In many
@@ -64,77 +75,234 @@
               type."
             </h6>
           </div>
-          <div>
-            <label class="radio1" width="50%" align="left"
-              >Non-Renewable
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
-          <div>
-            <label class="radio2" width="50%" float="right"
-              >Renewable
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
+          <div class="horizontal-radio-button-container">
+            <div class="energy-type-button-container left-container">
+              <div
+                :class="{
+                  'energy-type-radio-button input': currentEnergyType != 0,
+                  'energy-type-radio-button ActiveInput':
+                    currentEnergyType == 0,
+                }"
+                @click.native="activateEnergyTypeButton(0)"
+                @click="activateEnergyTypeButton(0)"
+              ></div>
+              <div
+                :class="{
+                  'energyt-type-text comment': currentEnergyType != 0,
+                  'energyt-type-text comment fontBold': currentEnergyType == 0,
+                }"
+              >
+                Non-Renewable
+              </div>
+            </div>
+            <div class="energy-type-button-container right-container">
+              <div
+                :class="{
+                  'energy-type-radio-button input': currentEnergyType != 1,
+                  'energy-type-radio-button ActiveInput':
+                    currentEnergyType == 1,
+                }"
+                @click.native="activateEnergyTypeButton(1)"
+                @click="activateEnergyTypeButton(1)"
+              ></div>
+              <div
+                :class="{
+                  'energyt-type-text comment': currentEnergyType != 1,
+                  'energyt-type-text comment fontBold': currentEnergyType == 1,
+                }"
+              >
+                Renewable
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="right">
-      <div class="middle block">
-        <h2>To</h2>
+      <div class="right-top-container">
+        <div class="section-header-text section-right-left">
+          <h2>To</h2>
+        </div>
+        <div class="vertical-buttons section-right-right">
+          <div class="vertical-button-top-container">
+            <div
+              :class="{
+                'energy-type-radio-button input': currentListingType != 0,
+                'energy-type-radio-button ActiveInput': currentListingType == 0,
+              }"
+              @click.native="activateListingTypeButton(0)"
+              @click="activateListingTypeButton(0)"
+            ></div>
+            <div
+              :class="{
+                'energyt-type-text comment horizontalText':
+                  currentListingType != 0,
+                'energyt-type-text comment  horizontalText fontBold':
+                  currentListingType == 0,
+              }"
+            >
+              Sell
+            </div>
+          </div>
+          <div class="vertical-button-bottom-container">
+            <div
+              :class="{
+                'energy-type-radio-button input': currentListingType != 1,
+                'energy-type-radio-button ActiveInput': currentListingType == 1,
+              }"
+              @click.native="activateListingTypeButton(1)"
+              @click="activateListingTypeButton(1)"
+            ></div>
+            <div
+              :class="{
+                'energyt-type-text comment horizontalText':
+                  currentListingType != 1,
+                'energyt-type-text comment fontBold horizontalText':
+                  currentListingType == 1,
+              }"
+            >
+              Buy
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="buttons">
-        <br /><label class="container"
-          >Sell
-          <input type="checkbox" checked="checked" />
-          <span class="checkmark"></span>
-        </label>
-        <br /><label class="container"
-          >Buy
-          <input type="checkbox" checked="checked" />
-          <span class="checkmark"></span>
-        </label>
+
+      <div class="submit-button">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 86 86"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <g
+            id="Webview"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g id="Creation" transform="translate(-1198.000000, -789.000000)">
+              <g
+                id="Listing-Creation"
+                transform="translate(332.000000, 85.000000)"
+              >
+                <g
+                  id="GoButton"
+                  class="buttonBackgroundColor"
+                  transform="translate(866.000000, 704.000000)"
+                >
+                  <circle id="Oval" cx="43" cy="43" r="43"></circle>
+                  <g
+                    id="lightning-bolt"
+                    transform="translate(21.000000, 19.000000)"
+                    stroke="#FFFFFF"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="5"
+                  >
+                    <polygon
+                      id="Path"
+                      points="24.1875 18.6666667 24.1875 0 0 29.3333333 18.8125 29.3333333 18.8125 48 43 18.6666667"
+                    ></polygon>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.listing {
-  width: 50%;
+.createListingCard {
+  width: 70%;
   margin: auto;
   height: 80%;
   text-align: left;
   padding: 1%;
-  border-radius: 8%;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .left {
   height: 100%;
   text-align: left;
-  width: 85%;
+  width: 80%;
   float: left;
   padding-left: 3%;
+  margin: auto;
+}
+
+.right {
+  height: 100%;
+  width: 30%;
+  float: right;
+  text-align: center;
+  padding-top: 30%;
+  margin: auto;
+}
+
+.cardNameText {
+  padding-top: 4%;
+  padding-bottom: 3%;
+}
+
+.comment {
+  padding-bottom: 1%;
 }
 
 .section {
   width: 90%;
+  height: 20%;
   text-align: left;
-  padding-bottom: 1%;
+  padding-bottom: 3%;
   border-radius: 0.5%;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
 
 .input {
-  width: 95%;
-  height: 40px;
+  width: 90%;
+  padding: 2.5%;
   border-radius: 0.5%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+.energy-type-button-container {
+  text-align: center;
+  justify-content: right;
+  align-items: center;
+  display: flex;
+}
+.energy-type-radio-button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.left-container {
+  float: left;
+}
+
+.right-container {
+  float: right;
+}
+
+.energyt-type-text {
+  text-align: center;
+  padding-left: 1%;
+  justify-content: right;
+  align-items: center;
+  display: flex;
 }
 
 .selection {
@@ -143,112 +311,79 @@
   padding: 1%;
 }
 
+.section-right-left {
+  float: left;
+  height: 60%;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  width: 20%;
+}
+
+.section-right-right {
+  float: right;
+  height: 60%;
+  width: 80%;
+  justify-content: right;
+  align-items: center;
+  display: flex;
+  position: relative;
+  padding-left: 10%;
+}
+
+.vertical-button-top-container {
+  position: absolute;
+  top: 0;
+}
+
+.vertical-button-bottom-container {
+  position: absolute;
+  bottom: 0;
+}
 .middle {
   float: left;
 }
 
-.right {
-  height: 100%;
-  width: 15%;
-  float: right;
-  text-align: center;
-  padding-top: 30%;
-}
 .radio {
   background-color: #f5f5dc;
 }
-.container {
-  display: block;
-  position: relative;
-  padding-left: auto;
-  margin-bottom: auto;
-  cursor: pointer;
-  font-size: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+.right-top-container {
+  align-items: center;
+  height: 75%;
 }
 
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.submit-button {
+  height: 20%;
 }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  width: auto;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196f3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: auto;
-  top: auto;
-  width: auto;
-  height: auto;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.radio1 {
-  width: 40%;
-  float: right;
-  padding-top: 2%;
-  text-align: center;
-  border-radius: 0.5%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-.radio2 {
-  width: 40%;
-  float: left;
-  padding-top: 2%;
-  text-align: center;
-  border-radius: 0.5%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-}
-
-.main {
-  height: 100%;
+.horizontalText {
   width: 100%;
-  background-color: #ffd700;
+  text-align: center;
+  padding-left: 25%;
 }
 </style>
 
-<script lang="ts">
-// use TypeScript here
+<script>
+export default {
+  computed: {
+    currentEnergyType() {
+      return this.$store.state.marketplaceState.energyType;
+    },
+    currentListingType() {
+      return this.$store.state.marketplaceState.listingType;
+    },
+    currentStatus() {
+      return this.$store.state.marketplaceState.creationStatus;
+    },
+  },
+  methods: {
+    activateEnergyTypeButton(eType) {
+      this.$energyTypeSetter(this.$store, eType);
+    },
+    activateListingTypeButton(lType) {
+      this.$listingTypeSetter(this.$store, lType);
+    },
+  },
+};
 </script>
