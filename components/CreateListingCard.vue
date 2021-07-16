@@ -16,7 +16,7 @@
 
       <div class="left-section">
         <div class="section">
-          <label class="section-header-text" for="fname">Amount</label>
+          <label class="section-header-text">Amount</label>
           <div class="comment">
             <h6>
               Denotes the amount of electricity you would like to buy/sell in
@@ -25,15 +25,14 @@
           </div>
           <input
             type="text"
-            id="fname"
             class="input"
-            name="firstname"
+            v-model="iAmount"
             placeholder="Please enter a number"
           />
         </div>
 
         <div class="section">
-          <label class="section-header-text" for="fname">Unit Price</label>
+          <label class="section-header-text">Unit Price</label>
           <div class="comment">
             <h6>
               Denotes the MVU* price of the electricity you would like to
@@ -42,15 +41,14 @@
           </div>
           <input
             type="text"
-            id="fname"
             class="input"
-            name="firstname"
+            v-model="iPrice"
             placeholder="Please enter a number"
           />
         </div>
 
         <div class="section">
-          <label class="section-header-text" for="fname">Matcher Node ID</label>
+          <label class="section-header-text">Matcher Node ID</label>
           <div class="comment">
             <h6>
               Every matching node corresponds to a micro marketplace, please
@@ -59,15 +57,14 @@
           </div>
           <input
             type="text"
-            id="fname"
             class="input"
-            name="firstname"
+            v-model="iMatcher"
             placeholder="Please enter a string"
           />
         </div>
 
         <div class="section">
-          <label class="section-header-text" for="fname">Energy Type</label>
+          <label class="section-header-text">Energy Type</label>
           <div class="comment">
             <h6>
               Type of the energy you would like to buy/sell. In many
@@ -83,7 +80,6 @@
                   'energy-type-radio-button ActiveInput':
                     currentEnergyType == 0,
                 }"
-                @click.native="activateEnergyTypeButton(0)"
                 @click="activateEnergyTypeButton(0)"
               ></div>
               <div
@@ -102,7 +98,6 @@
                   'energy-type-radio-button ActiveInput':
                     currentEnergyType == 1,
                 }"
-                @click.native="activateEnergyTypeButton(1)"
                 @click="activateEnergyTypeButton(1)"
               ></div>
               <div
@@ -131,7 +126,6 @@
                 'energy-type-radio-button input': currentListingType != 0,
                 'energy-type-radio-button ActiveInput': currentListingType == 0,
               }"
-              @click.native="activateListingTypeButton(0)"
               @click="activateListingTypeButton(0)"
             ></div>
             <div
@@ -151,7 +145,6 @@
                 'energy-type-radio-button input': currentListingType != 1,
                 'energy-type-radio-button ActiveInput': currentListingType == 1,
               }"
-              @click.native="activateListingTypeButton(1)"
               @click="activateListingTypeButton(1)"
             ></div>
             <div
@@ -168,7 +161,10 @@
         </div>
       </div>
 
-      <div class="submit-button">
+      <div
+        class="submit-button"
+        @click="submitListing(iAmount, iPrice, iMatcher)"
+      >
         <svg
           width="100%"
           height="100%"
@@ -366,6 +362,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      iPrice: "",
+      iMatcher: "",
+      iAmount: "",
+    };
+  },
   computed: {
     currentEnergyType() {
       return this.$store.state.marketplaceState.energyType;
@@ -383,6 +386,56 @@ export default {
     },
     activateListingTypeButton(lType) {
       this.$listingTypeSetter(this.$store, lType);
+    },
+    async submitListing(input_amount, input_price, input_matcher) {
+      //Update creationStatus to DEFAULT
+      this.$statusSetter(this.$store, -1);
+
+      //Gather inputs
+      var input_energy_type = this.$store.state.marketplaceState.energyType;
+      var input_listing_type = this.$store.state.marketplaceState.listingType;
+      var targetURL =
+        "http://" + this.$store.state.serverInfo.activeURL + "/create-listing";
+
+      console.log(targetURL);
+
+      if (input_energy_type != -1 && input_listing_type != -1) {
+        //Convert energy and listing type
+        var target_energy_type =
+          input_energy_type == 0 ? "NonRenewable" : "Renewable";
+        var target_listing_type =
+          input_listing_type == 0 ? "ProducerListing" : "ConsumerListing";
+
+        //Compose & Send request
+        var messageBody = {
+          electricityType: target_energy_type,
+          unitPrice: input_price,
+          amount: input_amount,
+          matcherName: input_matcher,
+          transactionType: target_listing_type,
+        };
+
+        //Parse response
+        var errorFlag = false;
+
+        var response = await this.$axios
+          .$post(targetURL, messageBody)
+          .catch(function (error) {
+            console.log("An error has occured");
+            //Update creationStatus to FAILED
+            errorFlag = true;
+            console.log(error);
+          });
+
+        if (errorFlag) {
+          this.$statusSetter(this.$store, 1);
+        } else {
+          this.$statusSetter(this.$store, 0);
+        }
+      } else {
+        //Update creationStatus to FAILED
+        this.$statusSetter(this.$store, 1);
+      }
     },
   },
 };
