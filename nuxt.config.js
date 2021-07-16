@@ -38,8 +38,19 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxt/http'
+    '@nuxt/http',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+
+  proxy: {
+    '/api/v1': { target: 'http://localhost:5005', pathRewrite: {'^/api/v1': ''} }
+  },
+  
   http: {
     // proxyHeaders: false
   },
