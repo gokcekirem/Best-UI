@@ -5,7 +5,8 @@
   <div class="column-first bg-gray-300">
     <div class="col-name title text-sm block"><h5>Role</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>BUYER</p></div>
+    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>BUYER</p></div>
+        <div class="col-input text-gray-600" v-else>SELLER</div>
   </div>
   <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Energy Type</h5></div>
@@ -15,32 +16,33 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Amount</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>100000</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitAmount}}</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Desired Unit Price</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>0.36$</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}$</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Market Unit Price</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>0.48$</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}$</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Market Clock</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>1</p></div>
+    <div class="col-input text-gray-600"><p></p>*required*</div>
   </div>
     <div class="column bg-gray-300">
-    <div class="col-name title text-sm block"><h5>Mather ID</h5></div>
+    <div class="col-name title text-sm block"><h5>Matcher ID</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>GoV-BV</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.matcher}}</p></div>
   </div>
     <div class="column-last bg-gray-300">
     <div class="col-name title text-sm block"><h5>Matched ID</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>SunCo</p></div>
+    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.seller}}</p></div>
+    <div class="col-input text-gray-600" v-else>{{listing.state.data.buyer}}</div>
   </div>
 </div>
 </div>
@@ -52,14 +54,14 @@
 .column {
   float: left;
   width: 11.25%;
-  padding: 10px; 
+  padding: 10px;
   height: 25%;
 }
 
 .column-first {
   float: left;
   width: 11.25%;
-  padding: 10px; 
+  padding: 10px;
   height: 25%;
   border-top-left-radius: 8%;
   border-bottom-left-radius: 8%;
@@ -68,7 +70,7 @@
 .column-last {
   float: left;
   width: 11.25%;
-  padding: 10px; 
+  padding: 10px;
   height: 25%;
   border-top-right-radius: 8%;
   border-bottom-right-radius: 8%;
@@ -100,6 +102,9 @@
 
 </style>
 
-<script lang="ts">
-// use TypeScript here
+<script>
+export default {
+    props: { listing: Object }
+
+  }
 </script>
