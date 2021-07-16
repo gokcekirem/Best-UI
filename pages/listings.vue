@@ -96,6 +96,10 @@ export default {
                                         "buyer": "O=PartyC, L=Munich, C=DE",
                                         "seller": "O=PartyA, L=London, C=GB",
                                         "matcher": "O=mister matching, L=New York, C=US",
+                                        "electricityType": "Renewable",
+                                        "buyerDesiredPrice": 2,
+                                        "sellerDesiredPrice": 10,
+                                        "marketClock": 2,
                                         "participants": [
                                             "O=PartyC, L=Munich, C=DE",
                                             "O=PartyA, L=London, C=GB",
@@ -120,11 +124,15 @@ export default {
                                               "state": {
                                                   "data": {
                                                       "@class": "de.tum.best.states.MatchingState",
-                                                      "unitPrice": 5,
-                                                      "unitAmount": 3,
+                                                      "unitPrice": 15,
+                                                      "unitAmount": 23,
                                                       "buyer": "O=PartyA, L=London, C=GB",
                                                       "seller": "O=PartyC, L=London, C=GB",
                                                       "matcher": "O=mister matching, L=New York, C=US",
+                                                      "electricityType": "Renewable",
+                                                      "buyerDesiredPrice": 13,
+                                                      "sellerDesiredPrice": 19,
+                                                      "marketClock": 1,
                                                       "participants": [
                                                           "O=PartyC, L=Munich, C=DE",
                                                           "O=PartyA, L=London, C=GB",
