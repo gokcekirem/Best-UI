@@ -36,15 +36,16 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Matcher ID</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>{{listing.state.data.matcher}}</p></div>
+    <div class="col-input text-gray-600 text-xs "><p>{{listing.state.data.matcher}}</p></div>
   </div>
     <div class="column-last bg-gray-300">
     <div class="col-name title text-sm block"><h5>Matched ID</h5></div>
     <br>
-    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.seller}}</p></div>
-    <div class="col-input text-gray-600" v-else>{{listing.state.data.buyer}}</div>
+    <div class="col-input text-gray-600 text-xs" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.seller}}</p></div>
+    <div class="col-input text-gray-600 text-xs" v-else>{{listing.state.data.buyer}}</div>
   </div>
 </div>
+<br>
 </div>
 
 </template>
@@ -53,41 +54,38 @@
 
 .column {
   float: left;
-  width: 11.25%;
+  width: 12.5%;
   padding: 10px;
-  height: 25%;
+  height: 100%;
 }
 
 .column-first {
   float: left;
-  width: 11.25%;
+  width: 12.5%;
   padding: 10px;
-  height: 25%;
+  height: 100%;
   border-top-left-radius: 8%;
   border-bottom-left-radius: 8%;
 }
 
 .column-last {
   float: left;
-  width: 11.25%;
+  width: 12.5%;
   padding: 10px;
-  height: 25%;
+  height: 100%;
   border-top-right-radius: 8%;
   border-bottom-right-radius: 8%;
 }
 
-
-.row:after {
-  content: "";
+.row{
   display: table;
-  clear: both;
-  margin-left: 10%;
-  margin-right: 10%;
-  float: left;
+  width: 100%;
+  height: 25%;
 }
 
 .section{
   width: 100%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
