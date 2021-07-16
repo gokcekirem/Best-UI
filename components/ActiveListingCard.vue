@@ -25,7 +25,7 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Mather ID</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>{{listing.state.data.matcher}}</p></div>
+    <div class="col-input text-gray-600 text-xs"><p>{{listing.state.data.matcher}}</p></div>
   </div>
     <div class="column-last bg-gray-300">
     <div class="col-name title text-xl block"><h4>Market Clock</h4></div>
@@ -33,6 +33,7 @@
     <div class="col-input text-gray-600"><p>{{listing.state.data.marketClock}}</p></div>
   </div>
 </div>
+<br>
 </div>
 
 </template>
@@ -40,10 +41,10 @@
 <style scoped>
 
 .column {
+  display: table-cell;
   float: left;
-  width: 15%;
-  padding: 10px;
-  height: 20%;
+  width: 16.66%;
+  height: 100%;
   border-top-color: coral;
   border-bottom-color: coral;
   border-top-width: 3px;
@@ -51,10 +52,10 @@
 }
 
 .column-first {
+  display: table-cell;
   float: left;
-  width: 15%;
-  padding: 10px;
-  height: 20%;
+  width: 16.66%;
+  height: 100%;
   border-top-left-radius: 8%;
   border-bottom-left-radius: 8%;
   border-top-color: coral;
@@ -66,10 +67,10 @@
 }
 
 .column-last {
+  display: table-cell;
   float: left;
-  width: 15%;
-  padding: 10px;
-  height: 20%;
+  width: 16.66%;
+  height: 100%;
   border-top-right-radius: 8%;
   border-bottom-right-radius: 8%;
   border-top-color: coral;
@@ -80,23 +81,18 @@
   border-bottom-width: 3px;
 }
 
-
-.row:after {
-  content: "";
+.row{
   display: table;
-  clear: both;
-  margin-left: 10%;
-  margin-right: 10%;
-  float: left;
+  width: 100%;
+  height: 25%;
 }
 
 .section{
   width: 100%;
-  height: 20%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
-  /*border-color: coral;
-  border-width: 2px;*/
+  
 
 }
 .col-name{
