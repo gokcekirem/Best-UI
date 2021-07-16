@@ -11,7 +11,7 @@
   <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Energy Type</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>Renewable</p></div>
+    <div class="col-input text-gray-600"><p>*Renewable*</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Amount</h5></div>
