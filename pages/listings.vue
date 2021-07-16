@@ -60,16 +60,74 @@ import Vue from "vue";
 Vue.prototype.$myID = "O=PartyA, L=London, C=GB";
 export default {
   name: "list",
-  async asyncData({ $http }) {
-    //You  should put those into try catch
-    //const currentlistings = await $http.$get(`http://localhost:50005/listings`);
-    //const matchings = await $http.$get(`http://localhost:50005/matchings`);
-    const currentlistings = [];
-    const matchings = [];
-    return { currentlistings: currentlistings, historystates: matchings };
+  data() {
+      return {
+        currentlistings: [],
+        historystates: []
+      };
   },
+  methods: {
+
+     async getlistings() {
+                  //You  should put those into try catch
+                  var currentlistings = []
+                  var matchings = []
+                  /*
+                  try{
+
+                     currentlistings = await $http.$get(currentlistingsURL);
+                    matchings = await $http.$get(matchingsURL);
+                  } catch (e){}
+
+                  */
+
+                  var currentlistingsURL =
+                                                         "http://" + this.$store.state.serverInfo.activeURL + "/listings";
+
+                                       var matchingsURL =
+                                                                              "http://" + this.$store.state.serverInfo.activeURL + "/matchings";
+
+
+                     //console.log('getlistings');
+
+                     var ref = this
+
+                     this.$axios.$get(currentlistingsURL)
+                     .then(function (response) {
+                         // handle success
+                         console.log("response");
+                         console.log(response);
+                         ref.currentlistings = response
+                         return ref.currentlistings
+                       })
+                       .catch(function (error) {
+                         // handle error
+                         console.log(error);
+                       })
+
+                      this.$axios.$get(matchingsURL)
+                       .then(function (response) {
+                           // handle success
+                           console.log(response);
+                           ref.historystates = response
+                           return ref.historystates
+                         })
+                         .catch(function (error) {
+                           // handle error
+                           console.log(error);
+                         })
+
+
+
+
+                    //return {currentlistings: currentlistings, historyListings: matchings}
+                }
+
+  }
+  ,
   beforeMount() {
     this.$currentPageSetter(this.$store, 1);
+    this.getlistings();
   },
 };
 </script>
