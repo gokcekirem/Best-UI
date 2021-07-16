@@ -11,7 +11,7 @@
   <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Energy Type</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>*Renewable*</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.electricityType}}</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Amount</h5></div>
@@ -21,7 +21,8 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Desired Unit Price</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}$</p></div>
+    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.buyerDesiredPrice}}$</p></div>
+            <div class="col-input text-gray-600" v-else>{{listing.state.data.sellerDesiredPrice}}$</div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Market Unit Price</h5></div>
@@ -31,7 +32,7 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Market Clock</h5></div>
     <br>
-    <div class="col-input text-gray-600"><p></p>*required*</div>
+    <div class="col-input text-gray-600"><p></p>{{listing.state.data.marketClock}}</div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Matcher ID</h5></div>
