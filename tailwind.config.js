@@ -21,8 +21,8 @@ module.exports = {
         'MainTextActive': 'rgba(3, 52, 95, 1)',
         'MainTextInactive': 'rgba(3, 52, 95, 0.5)',
         'ActiveAreaBackground': '#daebff',
-        'InputBoxInactiveColor': '#d2dce7',
-        'InputBoxActiveColor': 'rgba(52,54,51,1)'
+        'InputBoxInactiveColor': 'rgba(19, 66, 93, 0.25)',
+        'InputBoxActiveColor': 'rgba(19, 66, 93, 0.5)'
       },
       fontFamily: {
           'Black': ['Objective-Black'],
