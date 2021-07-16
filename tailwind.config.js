@@ -20,7 +20,9 @@ module.exports = {
        'ActiveAreaFillInBox': '#BBC2BA',
        'MainTextActive': '#EBEBEB',
        'MainTextInactive': '#B3B3B3',
-       'ActiveAreaBackground': '#EAF2E9'
+       'ActiveAreaBackground': '#EAF2E9',
+       'InputBoxInactiveColor': 'rgba(187,194,186,0.50)',
+       'InputBoxActiveColor': 'rgba(52,54,51,0.50)'
       },
       fontFamily: {
           'Black': ['Objective-Black'],
