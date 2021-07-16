@@ -20,7 +20,7 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Unit Price</h4></div>
     <br>
-    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}</p></div>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}$</p></div>
   </div>
     <div class="column bg-gray-300">
     <div class="col-name title text-xl block"><h4>Mather ID</h4></div>
@@ -42,7 +42,7 @@
 .column {
   float: left;
   width: 15%;
-  padding: 10px; 
+  padding: 10px;
   height: 20%;
   border-top-color: coral;
   border-bottom-color: coral;
@@ -53,7 +53,7 @@
 .column-first {
   float: left;
   width: 15%;
-  padding: 10px; 
+  padding: 10px;
   height: 20%;
   border-top-left-radius: 8%;
   border-bottom-left-radius: 8%;
@@ -68,7 +68,7 @@
 .column-last {
   float: left;
   width: 15%;
-  padding: 10px; 
+  padding: 10px;
   height: 20%;
   border-top-right-radius: 8%;
   border-bottom-right-radius: 8%;
