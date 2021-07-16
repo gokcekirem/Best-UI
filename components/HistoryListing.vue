@@ -5,7 +5,7 @@
   <div class="column-first bg-gray-300">
     <div class="col-name title text-sm block"><h5>Role</h5></div>
     <br>
-    <div class="col-input text-gray-600" v-if="listing.state.data.consumer === $myID"><p>BUYER</p></div>
+    <div class="col-input text-gray-600" v-if="listing.state.data.consumer.includes(this.$store.state.serverInfo.activeNodeName)"><p>BUYER</p></div>
         <div class="col-input text-gray-600" v-else>SELLER</div>
   </div>
   <div class="column bg-gray-300">
@@ -21,7 +21,7 @@
     <div class="column bg-gray-300">
     <div class="col-name title text-sm block"><h5>Desired Unit Price</h5></div>
     <br>
-    <div class="col-input text-gray-600" v-if="listing.state.data.consumer === $myID"><p>{{listing.state.data.consumerDesiredPrice}}$</p></div>
+    <div class="col-input text-gray-600" v-if="listing.state.data.consumer.includes(this.$store.state.serverInfo.activeNodeName)"><p>{{listing.state.data.consumerDesiredPrice}}$</p></div>
             <div class="col-input text-gray-600" v-else>{{listing.state.data.producerDesiredPrice}}$</div>
   </div>
     <div class="column bg-gray-300">
@@ -42,7 +42,7 @@
     <div class="column-last bg-gray-300">
     <div class="col-name title text-sm block"><h5>Matched ID</h5></div>
     <br>
-    <div class="col-input text-gray-600 text-xs" v-if="listing.state.data.consumer === $myID"><p>{{listing.state.data.producer}}</p></div>
+    <div class="col-input text-gray-600 text-xs" v-if="listing.state.data.consumer.includes(this.$store.state.serverInfo.activeNodeName)"><p>{{listing.state.data.producer}}</p></div>
     <div class="col-input text-gray-600 text-xs" v-else>{{listing.state.data.consumer}}</div>
   </div>
 </div>
