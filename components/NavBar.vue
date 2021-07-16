@@ -10,13 +10,13 @@
   >
     <div class="top bg-MainColorActive block">
       <div class="welcome">
-        <h2>Welcome to Marketplace!</h2>
+        <h2>Welcome to Marketplace! {{ currentName }}</h2>
       </div>
       <div class="clock fontColorInactive block">
-        <h6>Current Market Clock</h6>
+        <h6>Current Market Clock: {{ currentMarketTime }}</h6>
       </div>
       <div class="time fontColorInactive block">
-        <h6>Current Market Time</h6>
+        <h6>Current Market Time: {{ currentMarketState }}</h6>
       </div>
     </div>
     <div class="middle block">
@@ -224,6 +224,15 @@ export default {
   computed: {
     currentPageID() {
       return this.$store.state.marketplaceState.currentPage;
+    },
+    currentName() {
+      return this.$store.state.serverInfo.activeNodeName;
+    },
+    currentMarketTime() {
+      return this.$store.state.serverInfo.currentTime;
+    },
+    currentMarketState() {
+      return this.$store.state.serverInfo.currentMarketState;
     },
   },
   methods: {
