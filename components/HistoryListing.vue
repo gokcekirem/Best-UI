@@ -2,39 +2,51 @@
 
 <div class="section">
   <div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h5>Role</h5>
-    <p>BUYER</p>
+  <div class="column-first bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Role</h5></div>
+    <br>
+    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>BUYER</p></div>
+        <div class="col-input text-gray-600" v-else>SELLER</div>
   </div>
-  <div class="column" style="background-color:#bbb;">
-    <h5>Energy Type</h5>
-    <p>Renewable</p>
+  <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Energy Type</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.electricityType}}</p></div>
   </div>
-    <div class="column">
-    <h5>Amount</h5>
-    <p>100000</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Amount</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitAmount}}</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Desired Unit Price</h5>
-    <p>0.36$</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Desired Unit Price</h5></div>
+    <br>
+    <div class="col-input text-gray-600" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.buyerDesiredPrice}}$</p></div>
+            <div class="col-input text-gray-600" v-else>{{listing.state.data.sellerDesiredPrice}}$</div>
   </div>
-    <div class="column" style="background-color:#aaa;">
-    <h5>Market Unit Price</h5>
-    <p>0.48$</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Market Unit Price</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p>{{listing.state.data.unitPrice}}$</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Market Clock</h5>
-    <p>1</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Market Clock</h5></div>
+    <br>
+    <div class="col-input text-gray-600"><p></p>{{listing.state.data.marketClock}}</div>
   </div>
-    <div class="column">
-    <h5>Mather ID</h5>
-    <p>GoV-BV</p>
+    <div class="column bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Matcher ID</h5></div>
+    <br>
+    <div class="col-input text-gray-600 text-xs "><p>{{listing.state.data.matcher}}</p></div>
   </div>
-    <div class="column" style="background-color:#bbb;">
-    <h5>Matched ID</h5>
-    <p>SunCo</p>
+    <div class="column-last bg-gray-300">
+    <div class="col-name title text-sm block"><h5>Matched ID</h5></div>
+    <br>
+    <div class="col-input text-gray-600 text-xs" v-if="listing.state.data.buyer === $myID"><p>{{listing.state.data.seller}}</p></div>
+    <div class="col-input text-gray-600 text-xs" v-else>{{listing.state.data.buyer}}</div>
   </div>
 </div>
+<br>
 </div>
 
 </template>
@@ -43,29 +55,55 @@
 
 .column {
   float: left;
-  width: 10%;
-  padding: 10px; 
+  width: 12.5%;
+  padding: 10px;
+  height: 100%;
+}
+
+.column-first {
+  float: left;
+  width: 12.5%;
+  padding: 10px;
+  height: 100%;
+  border-top-left-radius: 8%;
+  border-bottom-left-radius: 8%;
+}
+
+.column-last {
+  float: left;
+  width: 12.5%;
+  padding: 10px;
+  height: 100%;
+  border-top-right-radius: 8%;
+  border-bottom-right-radius: 8%;
+}
+
+.row{
+  display: table;
+  width: 100%;
   height: 25%;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  margin-left: 10%;
-  margin-right: 10%;
-  float: left;
-}
-
 .section{
-  background-color: #4CAF50;
-  width: 80%;
+  width: 100%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
+.col-name{
+  text-align: center;
+}
+
+.col-input{
+  text-align: center;
+}
+
 </style>
 
-<script lang="ts">
-// use TypeScript here
+<script>
+export default {
+    props: { listing: Object }
+
+  }
 </script>

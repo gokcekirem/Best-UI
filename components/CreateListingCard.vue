@@ -19,8 +19,8 @@
           <label class="section-header-text" for="fname">Amount</label>
           <div class="comment">
             <h6>
-              "Denotes the amount of electricity you would like to buy/sell in
-              MVU*. (Minimum Viable Unit)"
+              Denotes the amount of electricity you would like to buy/sell in
+              MVU*. (Minimum Viable Unit)
             </h6>
           </div>
           <input
@@ -36,8 +36,8 @@
           <label class="section-header-text" for="fname">Unit Price</label>
           <div class="comment">
             <h6>
-              "Denotes the MVU* price of the electricity you would like to
-              buy/sell from. (Minimum Viable Unit)"
+              Denotes the MVU* price of the electricity you would like to
+              buy/sell from. (Minimum Viable Unit)
             </h6>
           </div>
           <input
@@ -53,8 +53,8 @@
           <label class="section-header-text" for="fname">Matcher Node ID</label>
           <div class="comment">
             <h6>
-              "Every matching node corresponds to a micro marketplace, please
-              specift in which marketplace you would like to participate in"
+              Every matching node corresponds to a micro marketplace, please
+              specify in which marketplace you would like to participate in
             </h6>
           </div>
           <input
@@ -70,9 +70,9 @@
           <label class="section-header-text" for="fname">Energy Type</label>
           <div class="comment">
             <h6>
-              "Type of the energy you would like to buy/sell. In many
+              Type of the energy you would like to buy/sell. In many
               marketplaces, the final unit prices will differ based on the enery
-              type."
+              type.
             </h6>
           </div>
           <div class="horizontal-radio-button-container">
