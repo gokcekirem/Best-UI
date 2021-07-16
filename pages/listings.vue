@@ -125,6 +125,10 @@ export default {
                                         "buyer": "O=PartyC, L=Munich, C=DE",
                                         "seller": "O=PartyA, L=London, C=GB",
                                         "matcher": "O=mister matching, L=New York, C=US",
+                                        "electricityType": "Renewable",
+                                        "buyerDesiredPrice": 2,
+                                        "sellerDesiredPrice": 10,
+                                        "marketClock": 2,
                                         "participants": [
                                             "O=PartyC, L=Munich, C=DE",
                                             "O=PartyA, L=London, C=GB",
