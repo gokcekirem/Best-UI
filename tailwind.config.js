@@ -13,16 +13,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-       'MainColorInactive': '#062300',
-       'MainColorActive': '#105700',
-       'ActiveAreaCard': 'rgba(205,216,203,0.50)',
-       'ActiveAreaRadioButtonActive': '#CDD8CB',
-       'ActiveAreaFillInBox': '#BBC2BA',
-       'MainTextActive': '#EBEBEB',
-       'MainTextInactive': '#B3B3B3',
-       'ActiveAreaBackground': '#EAF2E9',
-       'InputBoxInactiveColor': 'rgba(187,194,186,0.50)',
-       'InputBoxActiveColor': 'rgba(52,54,51,0.50)'
+        'MainColorInactive': '#bccbdc',
+        'MainColorActive': '#3fabc8',
+        'ActiveAreaCard': '#ffffff',
+        'ActiveAreaRadioButtonActive': '#688aaf',
+        'ActiveAreaFillInBox': '#d2dce7',
+        'MainTextActive': 'rgba(3, 52, 95, 1)',
+        'MainTextInactive': 'rgba(3, 52, 95, 0.5)',
+        'ActiveAreaBackground': '#daebff',
+        'InputBoxInactiveColor': 'rgba(19, 66, 93, 0.25)',
+        'InputBoxActiveColor': 'rgba(19, 66, 93, 0.5)'
       },
       fontFamily: {
           'Black': ['Objective-Black'],
