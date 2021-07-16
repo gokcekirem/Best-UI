@@ -85,6 +85,35 @@ export default {
                                         "txhash": "7444DFB915E7C55DF9A161B939718F8F0A9C4A1A37571659791897EECD7A9DB7",
                                         "index": 0
                                     }
+                                },
+                                {
+                                    "state": {
+                                        "data": {
+                                            "@class": "de.tum.best.states.ListingState",
+                                            "listingType": "ProducerListing",
+                                            "electricityType": "Non Renewable",
+                                            "unitPrice": 45,
+                                            "amount": 5,
+                                            "sender": "O=PartyA, L=London, C=GB",
+                                            "matcher": "O=mister matching, L=New York, C=US",
+                                            "marketClock": 1,
+                                            "participants": [
+                                                "O=PartyA, L=London, C=GB",
+                                                "O=mister matching, L=New York, C=US"
+                                            ]
+                                        },
+                                        "contract": "de.tum.best.contracts.ListingContract",
+                                        "notary": "O=Notary, L=London, C=GB",
+                                        "encumbrance": null,
+                                        "constraint": {
+                                            "@class": "net.corda.core.contracts.SignatureAttachmentConstraint",
+                                            "key": "aSq9DsNNvGhYxYyqA9wd2eduEAZ5AXWgJTbTEw3G5d2maAq8vtLE4kZHgCs5jcB1N31cx1hpsLeqG2ngSysVHqcXhbNts6SkRWDaV7xNcr6MtcbufGUchxredBb6"
+                                        }
+                                    },
+                                    "ref": {
+                                        "txhash": "7444DFB915E7C55DF9A161B939718F8F0A9C4A1A37571659791897EECD7A9DB7",
+                                        "index": 0
+                                    }
                                 }],
 
        historystates : [{
@@ -120,15 +149,43 @@ export default {
                                               "state": {
                                                   "data": {
                                                       "@class": "de.tum.best.states.MatchingState",
-                                                      "unitPrice": 5,
-                                                      "unitAmount": 3,
+                                                      "unitPrice": 8,
+                                                      "unitAmount": 4,
                                                       "buyer": "O=PartyA, L=London, C=GB",
                                                       "seller": "O=PartyC, L=London, C=GB",
-                                                      "matcher": "O=mister matching, L=New York, C=US",
+                                                      "matcher": "O=anonymous matching, L=Shangai, C=CN",
                                                       "participants": [
                                                           "O=PartyC, L=Munich, C=DE",
                                                           "O=PartyA, L=London, C=GB",
-                                                          "O=mister matching, L=New York, C=US"
+                                                          "O=missus matching, L=New York, C=US"
+                                                      ]
+                                                  },
+                                                  "contract": "de.tum.best.contracts.MatchingContract",
+                                                  "notary": "O=Notary, L=London, C=GB",
+                                                  "encumbrance": null,
+                                                  "constraint": {
+                                                      "@class": "net.corda.core.contracts.SignatureAttachmentConstraint",
+                                                      "key": "aSq9DsNNvGhYxYyqA9wd2eduEAZ5AXWgJTbTEw3G5d2maAq8vtLE4kZHgCs5jcB1N31cx1hpsLeqG2ngSysVHqcXhbNts6SkRWDaV7xNcr6MtcbufGUchxredBb6"
+                                                  }
+                                              },
+                                              "ref": {
+                                                  "txhash": "8A3620A6C4D212365E9F0F17655F36A5B15DAE6AD779BE692057ABD7AF43993D",
+                                                  "index": 0
+                                              }
+                                          },
+                                          {
+                                              "state": {
+                                                  "data": {
+                                                      "@class": "de.tum.best.states.MatchingState",
+                                                      "unitPrice": 7,
+                                                      "unitAmount": 2,
+                                                      "buyer": "O=PartyA, L=London, C=GB",
+                                                      "seller": "O=PartyC, L=London, C=GB",
+                                                      "matcher": "O=missus matching, L=New York, C=US",
+                                                      "participants": [
+                                                          "O=PartyC, L=Munich, C=DE",
+                                                          "O=PartyA, L=London, C=GB",
+                                                          "O=missus matching, L=New York, C=US"
                                                       ]
                                                   },
                                                   "contract": "de.tum.best.contracts.MatchingContract",
@@ -161,6 +218,7 @@ export default {
 
 .first{
     width:100%;
+    height: 30%;
 }
 .second{
     width:100%;
