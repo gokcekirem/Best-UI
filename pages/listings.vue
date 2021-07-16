@@ -14,7 +14,7 @@
             <div class="activeListing">
                 <ActiveListingCard
                 class="card"
-                v-for="listing in currentstates"
+                v-for="listing in currentlistings"
                 v-bind:key="listing.ref.txhash"
                 v-bind:listing="listing"
                 />
@@ -52,109 +52,17 @@
 import Vue from "vue";
 
 //export default Vue.extend({});
+// need global variable to identify this nodes name/identity
 Vue.prototype.$myID = "O=PartyA, L=London, C=GB"
 export default {
   name: "list",
-  data(){
-    return{
-       currentstates : [{
-                                    "state": {
-                                        "data": {
-                                            "@class": "de.tum.best.states.ListingState",
-                                            "listingType": "ProducerListing",
-                                            "electricityType": "Renewable",
-                                            "unitPrice": 50,
-                                            "amount": 3,
-                                            "sender": "O=PartyA, L=London, C=GB",
-                                            "matcher": "O=mister matching, L=New York, C=US",
-                                            "marketClock": 1,
-                                            "participants": [
-                                                "O=PartyA, L=London, C=GB",
-                                                "O=mister matching, L=New York, C=US"
-                                            ]
-                                        },
-                                        "contract": "de.tum.best.contracts.ListingContract",
-                                        "notary": "O=Notary, L=London, C=GB",
-                                        "encumbrance": null,
-                                        "constraint": {
-                                            "@class": "net.corda.core.contracts.SignatureAttachmentConstraint",
-                                            "key": "aSq9DsNNvGhYxYyqA9wd2eduEAZ5AXWgJTbTEw3G5d2maAq8vtLE4kZHgCs5jcB1N31cx1hpsLeqG2ngSysVHqcXhbNts6SkRWDaV7xNcr6MtcbufGUchxredBb6"
-                                        }
-                                    },
-                                    "ref": {
-                                        "txhash": "7444DFB915E7C55DF9A161B939718F8F0A9C4A1A37571659791897EECD7A9DB7",
-                                        "index": 0
-                                    }
-                                }],
+  async asyncData({ $http }) {
+        const currentlistings = await $http.$get(`http://localhost:50005/listings`)
+        const matchings = await $http.$get(`http://localhost:50005/matchings`)
 
-       historystates : [{
-                                "state": {
-                                    "data": {
-                                        "@class": "de.tum.best.states.MatchingState",
-                                        "unitPrice": 5,
-                                        "unitAmount": 3,
-                                        "buyer": "O=PartyC, L=Munich, C=DE",
-                                        "seller": "O=PartyA, L=London, C=GB",
-                                        "matcher": "O=mister matching, L=New York, C=US",
-                                        "electricityType": "Renewable",
-                                        "buyerDesiredPrice": 2,
-                                        "sellerDesiredPrice": 10,
-                                        "marketClock": 2,
-                                        "participants": [
-                                            "O=PartyC, L=Munich, C=DE",
-                                            "O=PartyA, L=London, C=GB",
-                                            "O=mister matching, L=New York, C=US"
-                                        ]
-                                    },
-                                    "contract": "de.tum.best.contracts.MatchingContract",
-                                    "notary": "O=Notary, L=London, C=GB",
-                                    "encumbrance": null,
-                                    "constraint": {
-                                        "@class": "net.corda.core.contracts.SignatureAttachmentConstraint",
-                                        "key": "aSq9DsNNvGhYxYyqA9wd2eduEAZ5AXWgJTbTEw3G5d2maAq8vtLE4kZHgCs5jcB1N31cx1hpsLeqG2ngSysVHqcXhbNts6SkRWDaV7xNcr6MtcbufGUchxredBb6"
-                                    }
-                                },
-                                "ref": {
-                                    "txhash": "8A3620A6C4D212365E9F0F17655F36A5B15DAE6AD779BE692057ABD7AF43993D",
-                                    "index": 0
-                                }
-                            }
-                            ,
-                                      {
-                                              "state": {
-                                                  "data": {
-                                                      "@class": "de.tum.best.states.MatchingState",
-                                                      "unitPrice": 15,
-                                                      "unitAmount": 23,
-                                                      "buyer": "O=PartyA, L=London, C=GB",
-                                                      "seller": "O=PartyC, L=London, C=GB",
-                                                      "matcher": "O=mister matching, L=New York, C=US",
-                                                      "electricityType": "Renewable",
-                                                      "buyerDesiredPrice": 13,
-                                                      "sellerDesiredPrice": 19,
-                                                      "marketClock": 1,
-                                                      "participants": [
-                                                          "O=PartyC, L=Munich, C=DE",
-                                                          "O=PartyA, L=London, C=GB",
-                                                          "O=mister matching, L=New York, C=US"
-                                                      ]
-                                                  },
-                                                  "contract": "de.tum.best.contracts.MatchingContract",
-                                                  "notary": "O=Notary, L=London, C=GB",
-                                                  "encumbrance": null,
-                                                  "constraint": {
-                                                      "@class": "net.corda.core.contracts.SignatureAttachmentConstraint",
-                                                      "key": "aSq9DsNNvGhYxYyqA9wd2eduEAZ5AXWgJTbTEw3G5d2maAq8vtLE4kZHgCs5jcB1N31cx1hpsLeqG2ngSysVHqcXhbNts6SkRWDaV7xNcr6MtcbufGUchxredBb6"
-                                                  }
-                                              },
-                                              "ref": {
-                                                  "txhash": "8A3620A6C4D212365E9F0F17655F36A5B15DAE6AD779BE692057ABD7AF43993D",
-                                                  "index": 0
-                                              }
-                                          }
-                                        ]
-    }
-  }
+        return {currentlistings: currentlistings, historystates: matchings}
+      }
+
 
   }
 
