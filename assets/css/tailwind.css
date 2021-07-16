@@ -214,3 +214,36 @@
 .iconInactiveColor {
   stroke: theme('colors.MainTextInactive');
 }
+
+.comment {
+  color: theme('colors.MainTextInactive');
+  font-size: 0.75rem;
+}
+
+.section-header-text {
+  font-size: 1.25rem;
+}
+
+.input {
+  background-color: theme('colors.InputBoxInactiveColor');
+}
+
+.ActiveInput {
+  background-color: theme('colors.InputBoxActiveColor');
+}
+
+.defaultIndicator {
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.50);
+}
+
+.successIndicator {
+  box-shadow: 0 0 20px 5px rgba(99, 228, 71, 0.50);
+}
+
+.failIndicator {
+  box-shadow: 0 0 20px 5px rgba(255, 28, 28, 0.50);
+}
+
+.buttonBackgroundColor {
+  fill: theme('colors.MainColorActive')
+}
