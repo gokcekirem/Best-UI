@@ -9,6 +9,9 @@
     "
   >
     <div class="top bg-MainColorActive block">
+      <div class="icon-container">
+        <img src="../assets/svg/logo.svg" class="icon" />
+      </div>
       <div class="welcome">
         <h2>Welcome to Marketplace! {{ currentName }}</h2>
       </div>
@@ -151,8 +154,21 @@
 .top {
   height: 33%;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
+.icon-container {
+  height: 50%;
+  width: 100%;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+}
 .welcome {
   height: 60%;
   text-align: center;
